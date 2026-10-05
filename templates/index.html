@@ -1,0 +1,1861 @@
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sanskrit Chatbot</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f1ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .chat-container {
+            width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h1 {
+            color: #5b3cc4;
+        }
+
+        p {
+            color: #555;
+        }
+
+        input {
+            width: 70%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin-left: 5px;
+            border: none;
+            border-radius: 8px;
+            background: #5b3cc4;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #452da0;
+        }
+
+        .response {
+            margin-top: 25px;
+            padding: 15px;
+            background: #f0ebff;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <h1>संस्कृत Chatbot</h1>
+
+        <p>Ask something in English</p>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="message"
+                placeholder="Type your message..."
+                required
+            >
+
+            <button type="submit">
+                Send
+            </button>
+
+        </form>
+
+        {% if response %}
+        <div class="response">
+            <strong>Bot:</strong>
+            {{ response }}
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sanskrit Chatbot</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f1ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .chat-container {
+            width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h1 {
+            color: #5b3cc4;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .subtitle {
+            margin-bottom: 25px;
+        }
+
+        .input-area {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #5b3cc4;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #452da0;
+        }
+
+        .response {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f0ebff;
+            border-radius: 10px;
+        }
+
+        .response-text {
+            font-size: 22px;
+            color: #333;
+            margin: 12px 0 18px;
+        }
+
+        .voice-button {
+            background: #2f7d32;
+        }
+
+        .voice-button:hover {
+            background: #256628;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <h1>संस्कृत Chatbot</h1>
+
+        <p class="subtitle">
+            Enter an English message and receive a Sanskrit response.
+        </p>
+
+        <form method="POST">
+
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    name="message"
+                    placeholder="Type your message..."
+                    required
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </div>
+
+        </form>
+
+        {% if response %}
+
+        <div class="response">
+
+            <strong>Bot Response:</strong>
+
+            <p id="sanskritResponse" class="response-text">
+                {{ response }}
+            </p>
+
+            <button
+                type="button"
+                class="voice-button"
+                onclick="speakSanskrit()">
+                🔊 Listen in Sanskrit
+            </button>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+
+    <script>
+
+        function speakSanskrit() {
+
+            const responseElement =
+                document.getElementById("sanskritResponse");
+
+            if (!responseElement) {
+                return;
+            }
+
+            const text = responseElement.innerText;
+
+            const speech =
+                new SpeechSynthesisUtterance(text);
+
+            /*
+             * Browsers may not provide a dedicated
+             * Sanskrit voice. Hindi is used as a
+             * practical pronunciation fallback.
+             */
+
+            speech.lang = "hi-IN";
+
+            speech.rate = 0.85;
+
+            speech.pitch = 1;
+
+            window.speechSynthesis.cancel();
+
+            window.speechSynthesis.speak(speech);
+        }
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sanskrit Chatbot</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f1ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .chat-container {
+            width: 550px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h1 {
+            color: #5b3cc4;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .input-area {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #5b3cc4;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #452da0;
+        }
+
+        .voice-input {
+            margin-top: 15px;
+            background: #4444aa;
+        }
+
+        .voice-input:hover {
+            background: #333388;
+        }
+
+        .response {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f0ebff;
+            border-radius: 10px;
+        }
+
+        .response-text {
+            font-size: 22px;
+            color: #333;
+            margin: 12px 0 18px;
+        }
+
+        .voice-button {
+            background: #2f7d32;
+        }
+
+        .voice-button:hover {
+            background: #256628;
+        }
+
+        .recognized {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff4d6;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .recognized-text {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <h1>संस्कृत Chatbot</h1>
+
+        <p class="subtitle">
+            Enter an English message and receive a Sanskrit response.
+        </p>
+
+        <form method="POST">
+
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    name="message"
+                    id="messageInput"
+                    placeholder="Type your message..."
+                    required
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </div>
+
+        </form>
+
+        <button
+            type="button"
+            class="voice-input"
+            onclick="startVoiceInput()">
+
+            🎤 Speak Sanskrit
+
+        </button>
+
+
+        <div id="recognizedBox" class="recognized">
+
+            <div>
+                Recognized Speech:
+            </div>
+
+            <div
+                id="recognizedText"
+                class="recognized-text">
+            </div>
+
+        </div>
+
+
+        {% if response %}
+
+        <div class="response">
+
+            <strong>Bot Response:</strong>
+
+            <p
+                id="sanskritResponse"
+                class="response-text">
+
+                {{ response }}
+
+            </p>
+
+            <button
+                type="button"
+                class="voice-button"
+                onclick="speakSanskrit()">
+
+                🔊 Listen in Sanskrit
+
+            </button>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+
+    <script>
+
+        // ==========================================
+        // TEXT TO SPEECH
+        // ==========================================
+
+        function speakSanskrit() {
+
+            const responseElement =
+                document.getElementById("sanskritResponse");
+
+            if (!responseElement) {
+                return;
+            }
+
+            const text =
+                responseElement.innerText;
+
+            const speech =
+                new SpeechSynthesisUtterance(text);
+
+            speech.lang = "hi-IN";
+
+            speech.rate = 0.85;
+
+            speech.pitch = 1;
+
+            window.speechSynthesis.cancel();
+
+            window.speechSynthesis.speak(speech);
+        }
+
+
+        // ==========================================
+        // SPEECH TO TEXT
+        // ==========================================
+
+        function startVoiceInput() {
+
+            const SpeechRecognition =
+                window.SpeechRecognition ||
+                window.webkitSpeechRecognition;
+
+            if (!SpeechRecognition) {
+
+                alert(
+                    "Speech recognition is not supported in this browser. Please use Google Chrome."
+                );
+
+                return;
+            }
+
+
+            const recognition =
+                new SpeechRecognition();
+
+
+            // Sanskrit language recognition
+            recognition.lang = "sa-IN";
+
+
+            recognition.continuous = false;
+
+            recognition.interimResults = false;
+
+
+            recognition.onstart = function () {
+
+                document.querySelector(".voice-input").innerText =
+                    "🎤 Listening...";
+
+            };
+
+
+            recognition.onresult = function (event) {
+
+                const transcript =
+                    event.results[0][0].transcript;
+
+                document.getElementById("messageInput").value =
+                    transcript;
+
+                document.getElementById("recognizedText").innerText =
+                    transcript;
+
+                document.getElementById("recognizedBox").style.display =
+                    "block";
+
+                document.querySelector(".voice-input").innerText =
+                    "🎤 Speak Sanskrit";
+
+            };
+
+
+            recognition.onerror = function (event) {
+
+                console.log(
+                    "Speech recognition error:",
+                    event.error
+                );
+
+                document.querySelector(".voice-input").innerText =
+                    "🎤 Speak Sanskrit";
+
+                alert(
+                    "Could not recognize the speech. Please try again."
+                );
+            };
+
+
+            recognition.onend = function () {
+
+                document.querySelector(".voice-input").innerText =
+                    "🎤 Speak Sanskrit";
+
+            };
+
+
+            recognition.start();
+        }
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sanskrit Chatbot</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            background: #f4f1ff;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+        }
+
+
+        .chat-container {
+
+            width: 600px;
+
+            max-width: 100%;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 25px
+                rgba(0, 0, 0, 0.15);
+
+            text-align: center;
+        }
+
+
+        h1 {
+
+            color: #5b3cc4;
+
+            margin: 0 0 10px;
+
+            font-size: 32px;
+        }
+
+
+        .subtitle {
+
+            color: #555;
+
+            margin-bottom: 25px;
+
+            line-height: 1.5;
+        }
+
+
+        /* INPUT */
+
+        .input-area {
+
+            display: flex;
+
+            gap: 8px;
+
+            width: 100%;
+        }
+
+
+        input {
+
+            flex: 1;
+
+            min-width: 0;
+
+            padding: 13px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+
+        input:focus {
+
+            border-color: #5b3cc4;
+        }
+
+
+        button {
+
+            padding: 12px 20px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #5b3cc4;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 15px;
+        }
+
+
+        button:hover {
+
+            background: #452da0;
+        }
+
+
+        /* VOICE */
+
+        .voice-input {
+
+            margin-top: 15px;
+
+            background: #4444aa;
+
+            width: 100%;
+        }
+
+
+        /* RESPONSE */
+
+        .response {
+
+            margin-top: 25px;
+
+            padding: 22px;
+
+            background: #f0ebff;
+
+            border-radius: 12px;
+        }
+
+
+        .response-title {
+
+            font-size: 15px;
+
+            color: #555;
+        }
+
+
+        .response-text {
+
+            font-size: 28px;
+
+            color: #222;
+
+            margin: 12px 0;
+
+            line-height: 1.7;
+        }
+
+
+        /* PRONUNCIATION GUIDE */
+
+        .pronunciation-guide {
+
+            background: white;
+
+            padding: 16px;
+
+            border-radius: 10px;
+
+            margin: 15px 0;
+
+            border-left: 5px solid #5b3cc4;
+
+            text-align: left;
+        }
+
+
+        .pronunciation-title {
+
+            color: #5b3cc4;
+
+            font-weight: bold;
+
+            font-size: 18px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .pronunciation-text {
+
+            font-size: 21px;
+
+            color: #333;
+
+            font-style: italic;
+
+        }
+
+
+        /* LISTEN */
+
+        .voice-button {
+
+            background: #2f7d32;
+
+            width: 100%;
+
+            margin-top: 5px;
+        }
+
+
+        /* RECOGNIZED */
+
+        .recognized {
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            background: #fff4d6;
+
+            border-radius: 10px;
+
+            display: none;
+
+            text-align: left;
+        }
+
+
+        .recognized-title {
+
+            font-weight: bold;
+
+            color: #555;
+
+            margin-bottom: 7px;
+        }
+
+
+        .recognized-text {
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #333;
+        }
+
+
+        /* REVIEW */
+
+        .pronunciation-review {
+
+            margin-top: 20px;
+
+            padding: 20px;
+
+            background: #eef7ff;
+
+            border-radius: 12px;
+
+            border: 2px solid #d5e9ff;
+
+            display: none;
+
+            text-align: left;
+        }
+
+
+        .review-title {
+
+            text-align: center;
+
+            color: #315aa8;
+
+            font-size: 21px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .review-row {
+
+            margin: 12px 0;
+
+            line-height: 1.6;
+
+            font-size: 17px;
+        }
+
+
+        .review-label {
+
+            font-weight: bold;
+
+            color: #444;
+        }
+
+
+        .accuracy-container {
+
+            text-align: center;
+
+            margin: 20px 0;
+        }
+
+
+        .accuracy {
+
+            font-size: 45px;
+
+            font-weight: bold;
+
+            color: #5b3cc4;
+        }
+
+
+        .accuracy-label {
+
+            color: #666;
+
+            font-size: 14px;
+        }
+
+
+        .review-message {
+
+            text-align: center;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            line-height: 1.5;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            background: white;
+        }
+
+
+        @media (max-width: 500px) {
+
+            .input-area {
+
+                flex-direction: column;
+            }
+
+            input,
+            .input-area button {
+
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="chat-container">
+
+
+    <h1>
+        संस्कृत Chatbot
+    </h1>
+
+
+    <p class="subtitle">
+
+        Enter an English message and receive a
+        Sanskrit response with pronunciation guidance.
+
+    </p>
+
+
+    <!-- INPUT -->
+
+    <form method="POST">
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                name="message"
+                id="messageInput"
+                placeholder="Try: hello, namaste, thank you..."
+                required
+                autocomplete="off"
+            >
+
+            <button type="submit">
+                Send
+            </button>
+
+        </div>
+
+    </form>
+
+
+    <!-- SPEECH -->
+
+    <button
+        type="button"
+        class="voice-input"
+        onclick="startVoiceInput()">
+
+        🎤 Speak Sanskrit
+
+    </button>
+
+
+    <!-- RECOGNIZED -->
+
+    <div
+        id="recognizedBox"
+        class="recognized">
+
+        <div class="recognized-title">
+
+            🎤 Recognized Speech
+
+        </div>
+
+
+        <div
+            id="recognizedText"
+            class="recognized-text">
+
+        </div>
+
+    </div>
+
+
+    {% if response %}
+
+    <!-- RESPONSE -->
+
+    <div class="response">
+
+
+        <div class="response-title">
+
+            🤖 Bot Response
+
+        </div>
+
+
+        <div
+            id="sanskritResponse"
+            class="response-text">
+
+            {{ response }}
+
+        </div>
+
+
+        <!-- PRONUNCIATION -->
+
+        <div class="pronunciation-guide">
+
+            <div class="pronunciation-title">
+
+                🗣️ How to Pronounce
+
+            </div>
+
+
+            <div
+                id="pronunciationGuide"
+                class="pronunciation-text">
+
+                ({{ pronunciation }})
+
+            </div>
+
+        </div>
+
+
+        <!-- LISTEN -->
+
+        <button
+            type="button"
+            class="voice-button"
+            onclick="speakSanskrit()">
+
+            🔊 Listen to Pronunciation
+
+        </button>
+
+
+        <!-- REVIEW -->
+
+        <div
+            id="pronunciationReview"
+            class="pronunciation-review">
+
+
+            <div class="review-title">
+
+                📊 Pronunciation Review
+
+            </div>
+
+
+            <div class="review-row">
+
+                <span class="review-label">
+                    Sanskrit:
+                </span>
+
+                <span>
+                    {{ response }}
+                </span>
+
+            </div>
+
+
+            <div class="review-row">
+
+                <span class="review-label">
+                    Correct Pronunciation:
+                </span>
+
+                <span id="expectedPronunciation">
+                    {{ pronunciation }}
+                </span>
+
+            </div>
+
+
+            <div class="review-row">
+
+                <span class="review-label">
+                    You said:
+                </span>
+
+                <span id="spokenWord">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="accuracy-container">
+
+                <div
+                    id="accuracy"
+                    class="accuracy">
+
+                    0%
+
+                </div>
+
+
+                <div class="accuracy-label">
+
+                    Pronunciation Accuracy
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="reviewMessage"
+                class="review-message">
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    {% endif %}
+
+
+</div>
+
+
+
+<script>
+
+
+// ==========================================
+// TEXT TO SPEECH
+// ==========================================
+
+function speakSanskrit() {
+
+
+    const responseElement =
+        document.getElementById(
+            "sanskritResponse"
+        );
+
+
+    if (!responseElement) {
+
+        return;
+
+    }
+
+
+    const text =
+        responseElement.innerText;
+
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+
+    speech.lang = "hi-IN";
+
+    speech.rate = 0.8;
+
+    speech.pitch = 1;
+
+
+    window.speechSynthesis.cancel();
+
+    window.speechSynthesis.speak(speech);
+
+}
+
+
+
+// ==========================================
+// SPEECH RECOGNITION
+// ==========================================
+
+function startVoiceInput() {
+
+
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+
+    if (!SpeechRecognition) {
+
+        alert(
+            "Speech recognition is not supported. Please use Google Chrome."
+        );
+
+        return;
+
+    }
+
+
+    const recognition =
+        new SpeechRecognition();
+
+
+    recognition.lang = "en-IN";
+
+    recognition.continuous = false;
+
+    recognition.interimResults = false;
+
+
+    recognition.onstart = function() {
+
+        document.querySelector(
+            ".voice-input"
+        ).innerText =
+            "🎤 Listening...";
+
+    };
+
+
+    recognition.onresult = function(event) {
+
+
+        const transcript =
+            event.results[0][0].transcript;
+
+
+        console.log(
+            "Recognized speech:",
+            transcript
+        );
+
+
+        document.getElementById(
+            "recognizedText"
+        ).innerText =
+            transcript;
+
+
+        document.getElementById(
+            "recognizedBox"
+        ).style.display =
+            "block";
+
+
+        document.querySelector(
+            ".voice-input"
+        ).innerText =
+            "🎤 Speak Sanskrit";
+
+
+        // IMPORTANT:
+        // Compare with English pronunciation guide
+
+        checkPronunciation(transcript);
+
+    };
+
+
+    recognition.onerror = function(event) {
+
+
+        console.log(
+            "Speech recognition error:",
+            event.error
+        );
+
+
+        document.querySelector(
+            ".voice-input"
+        ).innerText =
+            "🎤 Speak Sanskrit";
+
+
+        alert(
+            "Could not recognize the speech. Please try again."
+        );
+
+    };
+
+
+    recognition.onend = function() {
+
+        document.querySelector(
+            ".voice-input"
+        ).innerText =
+            "🎤 Speak Sanskrit";
+
+    };
+
+
+    recognition.start();
+
+}
+
+
+
+// ==========================================
+// PRONUNCIATION CHECK
+// ==========================================
+
+function checkPronunciation(spokenText) {
+
+
+    const expectedElement =
+        document.getElementById(
+            "expectedPronunciation"
+        );
+
+
+    const reviewBox =
+        document.getElementById(
+            "pronunciationReview"
+        );
+
+
+    const spokenElement =
+        document.getElementById(
+            "spokenWord"
+        );
+
+
+    const accuracyElement =
+        document.getElementById(
+            "accuracy"
+        );
+
+
+    const messageElement =
+        document.getElementById(
+            "reviewMessage"
+        );
+
+
+    if (
+        !expectedElement ||
+        !reviewBox
+    ) {
+
+        return;
+
+    }
+
+
+    const expected =
+        expectedElement.innerText.trim();
+
+
+    const spoken =
+        spokenText.trim();
+
+
+    console.log(
+        "Expected pronunciation:",
+        expected
+    );
+
+
+    console.log(
+        "User pronunciation:",
+        spoken
+    );
+
+
+    spokenElement.innerText =
+        spoken;
+
+
+    const score =
+        calculatePronunciationAccuracy(
+            expected,
+            spoken
+        );
+
+
+    accuracyElement.innerText =
+        score + "%";
+
+
+    // ======================================
+    // REVIEW
+    // ======================================
+
+    if (score >= 95) {
+
+        messageElement.innerText =
+            "🌟 Excellent! Your pronunciation is almost perfect.";
+
+    }
+
+    else if (score >= 85) {
+
+        messageElement.innerText =
+            "👏 Great job! Your pronunciation is very good.";
+
+    }
+
+    else if (score >= 70) {
+
+        messageElement.innerText =
+            "✅ Good pronunciation! A little more practice will make it better.";
+
+    }
+
+    else if (score >= 50) {
+
+        messageElement.innerText =
+            "👍 Good attempt! Listen once more and try again.";
+
+    }
+
+    else {
+
+        messageElement.innerText =
+            "🔄 Keep practicing. Follow the pronunciation guide and try again.";
+
+    }
+
+
+    reviewBox.style.display =
+        "block";
+
+}
+
+
+
+// ==========================================
+// NORMALIZE PRONUNCIATION
+// ==========================================
+
+function normalizePronunciation(text) {
+
+
+    let value =
+        text
+        .toLowerCase()
+        .trim();
+
+
+    // Remove punctuation
+
+    value =
+        value.replace(
+            /[.,!?;:"'()[\]{}]/g,
+            ""
+        );
+
+
+    // Remove extra spaces
+
+    value =
+        value.replace(
+            /\s+/g,
+            " "
+        );
+
+
+    /*
+       Handle common Sanskrit/Roman
+       pronunciation variations.
+
+       Example:
+
+       Suprabhaatam
+       Suprabhatam
+
+       Both become:
+
+       suprabhatam
+    */
+
+
+    value =
+        value.replace(
+            /aa/g,
+            "a"
+        );
+
+
+    value =
+        value.replace(
+            /ee/g,
+            "i"
+        );
+
+
+    value =
+        value.replace(
+            /ii/g,
+            "i"
+        );
+
+
+    value =
+        value.replace(
+            /oo/g,
+            "u"
+        );
+
+
+    value =
+        value.replace(
+            /uu/g,
+            "u"
+        );
+
+
+    // Common pronunciation variations
+
+    value =
+        value.replace(
+            /ph/g,
+            "f"
+        );
+
+
+    value =
+        value.replace(
+            /bh/g,
+            "b"
+        );
+
+
+    value =
+        value.replace(
+            /dh/g,
+            "d"
+        );
+
+
+    value =
+        value.replace(
+            /th/g,
+            "t"
+        );
+
+
+    value =
+        value.replace(
+            /kh/g,
+            "k"
+        );
+
+
+    value =
+        value.replace(
+            /gh/g,
+            "g"
+        );
+
+
+    value =
+        value.replace(
+            /chh/g,
+            "ch"
+        );
+
+
+    value =
+        value.replace(
+            /sh/g,
+            "s"
+        );
+
+
+    return value;
+
+}
+
+
+
+// ==========================================
+// PRONUNCIATION ACCURACY
+// ==========================================
+
+function calculatePronunciationAccuracy(
+    expected,
+    spoken
+) {
+
+
+    expected =
+        normalizePronunciation(
+            expected
+        );
+
+
+    spoken =
+        normalizePronunciation(
+            spoken
+        );
+
+
+    console.log(
+        "Normalized expected:",
+        expected
+    );
+
+
+    console.log(
+        "Normalized spoken:",
+        spoken
+    );
+
+
+    // Exact match
+
+    if (expected === spoken) {
+
+        return 100;
+
+    }
+
+
+    if (
+        expected.length === 0 ||
+        spoken.length === 0
+    ) {
+
+        return 0;
+
+    }
+
+
+    // Levenshtein distance
+
+    const distance =
+        levenshteinDistance(
+            expected,
+            spoken
+        );
+
+
+    const maxLength =
+        Math.max(
+            expected.length,
+            spoken.length
+        );
+
+
+    let score =
+        (
+            (maxLength - distance)
+            /
+            maxLength
+        ) * 100;
+
+
+    score =
+        Math.round(score);
+
+
+    return Math.max(
+        0,
+        Math.min(
+            100,
+            score
+        )
+    );
+
+}
+
+
+
+// ==========================================
+// LEVENSHTEIN DISTANCE
+// ==========================================
+
+function levenshteinDistance(a, b) {
+
+
+    const matrix = [];
+
+
+    for (
+        let i = 0;
+        i <= b.length;
+        i++
+    ) {
+
+        matrix[i] = [i];
+
+    }
+
+
+    for (
+        let j = 0;
+        j <= a.length;
+        j++
+    ) {
+
+        matrix[0][j] = j;
+
+    }
+
+
+    for (
+        let i = 1;
+        i <= b.length;
+        i++
+    ) {
+
+
+        for (
+            let j = 1;
+            j <= a.length;
+            j++
+        ) {
+
+
+            if (
+                b.charAt(i - 1) ===
+                a.charAt(j - 1)
+            ) {
+
+                matrix[i][j] =
+                    matrix[i - 1][j - 1];
+
+            }
+
+            else {
+
+                matrix[i][j] =
+                    Math.min(
+
+                        matrix[i - 1][j - 1] + 1,
+
+                        matrix[i][j - 1] + 1,
+
+                        matrix[i - 1][j] + 1
+
+                    );
+
+            }
+
+        }
+
+    }
+
+
+    return matrix[b.length][a.length];
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
